@@ -229,6 +229,24 @@ section{padding:96px 5vw;}
 .svc-desc{font-size:.98rem;line-height:1.75;color:rgba(26,15,0,.64);font-style:italic;margin-bottom:16px;}
 .svc-link{font-family:'Josefin Sans',sans-serif;font-size:.58rem;letter-spacing:3px;text-transform:uppercase;color:var(--thread);text-decoration:none;border-bottom:1px solid var(--thread);padding-bottom:2px;}
 
+/* ===== EMBROIDERY ON PRODUCTS ===== */
+.uses-sec{background:linear-gradient(180deg,var(--cream),var(--silk));}
+.uses-intro{font-size:1.1rem;font-style:italic;line-height:1.85;color:rgba(26,15,0,.66);max-width:620px;margin-bottom:46px;}
+.uses-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
+.use-card{background:var(--cream);border:1px solid rgba(201,168,76,.25);overflow:hidden;display:flex;flex-direction:column;transition:transform .35s,box-shadow .35s,border-color .35s;}
+.use-card:hover{transform:translateY(-6px);box-shadow:0 18px 44px rgba(26,15,0,.14);border-color:var(--marigold);}
+.use-vis{aspect-ratio:4/3;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:3.6rem;}
+.use-vis img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s;}
+.use-card:hover .use-vis img{transform:scale(1.07);}
+.use-body{padding:20px 20px 22px;display:flex;flex-direction:column;flex:1;}
+.use-name{font-family:'Playfair Display',serif;font-size:1.12rem;margin-bottom:6px;}
+.use-desc{font-size:.93rem;line-height:1.65;font-style:italic;color:rgba(26,15,0,.62);margin-bottom:14px;flex:1;}
+.use-btn{align-self:flex-start;font-family:'Josefin Sans',sans-serif;font-size:.56rem;letter-spacing:3px;text-transform:uppercase;color:var(--thread);text-decoration:none;border-bottom:1px solid var(--thread);padding-bottom:2px;}
+.use-btn:hover{color:var(--flame);border-color:var(--flame);}
+@media(max-width:1100px){.uses-grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:800px){.uses-grid{grid-template-columns:repeat(2,1fr);gap:14px;}}
+@media(max-width:480px){.uses-grid{grid-template-columns:1fr;}}
+
 /* ===== OUR WORKS ===== */
 .works-sec{background:radial-gradient(ellipse at top,#3a1a00 0%,var(--deep) 60%);}
 .works-sec .s-title{color:var(--cream);}
@@ -447,6 +465,7 @@ footer{background:#0f0700;padding:56px 5vw 30px;border-top:1px solid rgba(201,16
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <a href="#services" data-i18n="nav_services">Services</a>
+  <a href="#uses" data-i18n="nav_uses">Products</a>
   <a href="#works" data-i18n="nav_works">Our Works</a>
   <a href="#designs" data-i18n="nav_designs">Designs</a>
   <a href="#about" data-i18n="nav_about">Our Story</a>
@@ -470,6 +489,7 @@ footer{background:#0f0700;padding:56px 5vw 30px;border-top:1px solid rgba(201,16
     <div class="nav-right">
       <ul class="nav-links" id="navLinks">
         <li><a href="#services" data-i18n="nav_services">Services</a></li>
+        <li><a href="#uses" data-i18n="nav_uses">Products</a></li>
         <li><a href="#works" data-i18n="nav_works">Our Works</a></li>
         <li><a href="#designs" data-i18n="nav_designs">Designs</a></li>
         <li><a href="#about" data-i18n="nav_about">Our Story</a></li>
@@ -542,6 +562,14 @@ footer{background:#0f0700;padding:56px 5vw 30px;border-top:1px solid rgba(201,16
   </div>
 </section>
 
+<!-- EMBROIDERY ON PRODUCTS -->
+<section class="uses-sec" id="uses">
+  <div class="s-label reveal" data-i18n="uses_label">Beyond Garments</div>
+  <h2 class="s-title reveal rd1"><span data-i18n="uses_title">Embroidery on <em style="color:var(--thread)">Everything</em></span></h2>
+  <p class="uses-intro reveal rd2" data-i18n="uses_intro">From cushion covers for your home to T-shirts, caps and uniforms — if it's fabric, we can embroider it. Bring your item or ask us to stitch it new.</p>
+  <div class="uses-grid" id="usesGrid"></div>
+</section>
+
 <div class="rangoli" style="background:var(--silk)" aria-hidden="true"><svg><use href="#rangoli"/></svg></div>
 
 <!-- OUR WORKS -->
@@ -586,8 +614,8 @@ footer{background:#0f0700;padding:56px 5vw 30px;border-top:1px solid rgba(201,16
     <p class="about-body reveal rd3">From delicate floral machine embroideries on kurtis to bold custom motifs on contemporary garments, every piece from our studio is stitched with love, precision, and a deep respect for textile artistry.</p>
     <div class="about-stats reveal rd4">
       <div><span class="stat-num" data-count="500" data-suffix="+">0</span><div class="stat-lbl">Designs</div></div>
-      <div><span class="stat-num" data-count="8" data-suffix="+">0</span><div class="stat-lbl">Years</div></div>
-      <div><span class="stat-num" data-count="1200" data-suffix="+">0</span><div class="stat-lbl">Happy Clients</div></div>
+      <div><span class="stat-num" data-count="5" data-suffix="+">0</span><div class="stat-lbl">Years</div></div>
+      <div><span class="stat-num" data-count="300" data-suffix="+">0</span><div class="stat-lbl">Happy Clients</div></div>
     </div>
   </div>
 </section>
@@ -616,7 +644,7 @@ footer{background:#0f0700;padding:56px 5vw 30px;border-top:1px solid rgba(201,16
       <div><label for="fName">Your Name</label><input id="fName" name="name" type="text" required autocomplete="name" placeholder="Name"/></div>
       <div><label for="fSvc">Service</label>
         <select id="fSvc" name="service">
-          <option>Machine Embroidery</option><option>Custom Design</option><option>Tailoring</option><option>New Dress Stitching</option><option>Bridal / Blouse Work</option><option>Logo / Bulk Order</option>
+          <option>Machine Embroidery</option><option>Custom Design</option><option>Tailoring</option><option>New Dress Stitching</option><option>Bridal / Blouse Work</option><option>Pillow / Cushion Covers</option><option>T-shirts / Hoodies / Caps</option><option>Home Décor / Gifts</option><option>Logo / Bulk Order</option>
         </select></div>
       <div><label for="fDate">Needed By (optional)</label><input id="fDate" name="date" type="date"/></div>
       <div><label for="fMsg">Details</label><textarea id="fMsg" name="msg" placeholder="Fabric, design idea, quantity…"></textarea></div>
@@ -629,11 +657,57 @@ footer{background:#0f0700;padding:56px 5vw 30px;border-top:1px solid rgba(201,16
 <section class="testi-sec">
   <div class="s-label reveal" data-i18n="testi_label">Voices</div>
   <h2 class="s-title reveal rd1"><span data-i18n="testi_title">What Our <em style="color:var(--rose)">Clients Say</em></span></h2>
-  <div class="testi-grid">
-    <figure class="testi-card reveal rd1"><div class="testi-stars">★★★★★</div><blockquote class="testi-txt">The embroidery on my wedding blouse was absolutely stunning. The fine details and colour matching were beyond my expectations. All my relatives were asking where I got it done!</blockquote><figcaption class="testi-author"><div class="t-avatar">🌸</div><div><div class="t-name">Lakshmi Devi</div><div class="t-place">Garividi Bride, 2024</div></div></figcaption></figure>
-    <figure class="testi-card reveal rd2"><div class="testi-stars">★★★★★</div><blockquote class="testi-txt">I gave them my own design sketch and they digitized and stitched it perfectly. The machine embroidery quality is top class. Best shop in Vizianagaram district!</blockquote><figcaption class="testi-author"><div class="t-avatar">✨</div><div><div class="t-name">Priya Varma</div><div class="t-place">Vizianagaram, Regular Customer</div></div></figcaption></figure>
-    <figure class="testi-card reveal rd3"><div class="testi-stars">★★★★★</div><blockquote class="testi-txt">GS did the embroidery work for our school uniform logos and festival costumes. Very professional, very fast, and very affordable. Highly recommended for bulk orders!</blockquote><figcaption class="testi-author"><div class="t-avatar">🎯</div><div><div class="t-name">Ravi Shankar</div><div class="t-place">School Principal, Garividi</div></div></figcaption></figure>
-  </div>
+```html
+<div class="testi-grid">
+  <figure class="testi-card reveal rd1">
+    <div class="testi-stars">★★★★★</div>
+    <blockquote class="testi-txt">The experience was wonderful from beginning to end. Everything was handled with care and attention. Truly happy with the overall experience!</blockquote>
+    <figcaption class="testi-author">
+      <div class="t-avatar">🌸</div>
+      <div>
+        <div class="t-name">Lakshmi Devi</div>
+        <div class="t-place">Happy Customer</div>
+      </div>
+    </figcaption>
+  </figure>
+
+  <figure class="testi-card reveal rd2">
+    <div class="testi-stars">★★★★★</div>
+    <blockquote class="testi-txt">I really appreciate the patience, friendly approach and attention to every little detail. Everything turned out just as I had hoped!</blockquote>
+    <figcaption class="testi-author">
+      <div class="t-avatar">✨</div>
+      <div>
+        <div class="t-name">Priya Varma</div>
+        <div class="t-place">Regular Customer</div>
+      </div>
+    </figcaption>
+  </figure>
+
+  <figure class="testi-card reveal rd3">
+    <div class="testi-stars">★★★★★</div>
+    <blockquote class="testi-txt">A very pleasant experience! The quality, dedication and personal attention made a great impression. I would definitely recommend them.</blockquote>
+    <figcaption class="testi-author">
+      <div class="t-avatar">💖</div>
+      <div>
+        <div class="t-name">Sravani</div>
+        <div class="t-place">Happy Customer</div>
+      </div>
+    </figcaption>
+  </figure>
+
+  <figure class="testi-card reveal rd4">
+    <div class="testi-stars">★★★★★</div>
+    <blockquote class="testi-txt">Excellent experience and genuinely friendly people. They understood my expectations and made sure everything was taken care of beautifully.</blockquote>
+    <figcaption class="testi-author">
+      <div class="t-avatar">🌷</div>
+      <div>
+        <div class="t-name">Anusha</div>
+        <div class="t-place">Satisfied Customer</div>
+      </div>
+    </figcaption>
+  </figure>
+</div>
+```
 </section>
 
 <!-- FAQ -->
@@ -685,7 +759,7 @@ footer{background:#0f0700;padding:56px 5vw 30px;border-top:1px solid rgba(201,16
       <div class="footer-logo"><img src="images/logo.png" alt="GS Computer Embroidery logo" width="50" height="50" loading="lazy" onerror="this.style.display='none'"/><span class="footer-brand-name">GS Computer Embroidery</span></div>
       <p class="footer-tag">Crafting wearable art from the heart of Garividi, Andhra Pradesh.<br>Every stitch, a promise. 🪔</p>
     </div>
-    <div><div class="f-col-title">Services</div><ul class="f-links"><li><a href="#services">Machine Embroidery</a></li><li><a href="#services">Custom Designs</a></li><li><a href="#services">Tailoring</a></li><li><a href="#services">New Dresses</a></li></ul></div>
+    <div><div class="f-col-title">Services</div><ul class="f-links"><li><a href="#services">Machine Embroidery</a></li><li><a href="#services">Custom Designs</a></li><li><a href="#services">Tailoring</a></li><li><a href="#services">New Dresses</a></li><li><a href="#uses">Pillow Covers &amp; More</a></li></ul></div>
     <div><div class="f-col-title">Explore</div><ul class="f-links"><li><a href="#works">Our Works</a></li><li><a href="#designs">Designs</a></li><li><a href="#about">Our Story</a></li><li><a href="#faq">FAQ</a></li></ul></div>
     <div><div class="f-col-title">Contact</div><ul class="f-links"><li><a href="tel:+917382284300">+91 73822 84300</a></li><li><a href="mailto:gsembroidery@gmail.com">Email us</a></li><li><a href="#order">Custom Order</a></li><li><a href="#contact">Find Us</a></li></ul></div>
   </div>
@@ -787,7 +861,7 @@ const hb=$('#hamburger'), mm=$('#mobileMenu');
 function setMenu(o){mm.classList.toggle('open',o);hb.classList.toggle('open',o);hb.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':'';}
 hb.onclick=()=>setMenu(!mm.classList.contains('open'));
 $$('#mobileMenu a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
-const secs=['services','works','designs','about','faq','contact'].map(id=>document.getElementById(id));
+const secs=['services','uses','works','designs','about','faq','contact'].map(id=>document.getElementById(id));
 const navIO=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){$$('#navLinks a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id));}}),{rootMargin:'-45% 0px -50% 0px'});
 secs.forEach(s=>s&&navIO.observe(s));
 
@@ -816,8 +890,37 @@ $('#shopGrid').innerHTML=shopItems.map((it,i)=>{
   return `<article class="prod-card reveal rd${i+1}"><div class="prod-visual">${vis}<span class="prod-tag">${it.tag}</span></div><div class="prod-info"><h3 class="prod-name">${it.name}</h3><p class="prod-desc">${it.desc}</p><div class="prod-footer"><span class="prod-price">${it.price}</span><a class="prod-btn" target="_blank" rel="noopener" href="${waLink(`Hi GS Embroidery! I'm interested in the "${it.name}" (${it.price}). Please share more details.`)}">Enquire</a></div></div></article>`;
 }).join('');
 
+/* ---------- Embroidery on products ---------- */
+/* Optional photos: put them in images/uses/ named like the slug below, e.g. images/uses/pillow-covers.jpg (jpg/png/webp) */
+const USES=[
+  {slug:'pillow-covers',e:'🛋️',g:'#f6dfb8,#e8b98a',name:'Cushion & Pillow Covers',svc:'Pillow / Cushion Covers',desc:'Florals, peacocks, tigers, names or festive motifs in rich raised stitching — for your living room or as gifts.'},
+  {slug:'tshirts',e:'👕',g:'#d8d2c8,#a9a092',name:'T-Shirts & Hoodies',svc:'T-shirts / Hoodies / Caps',desc:'Chest logos, full-back artwork and sleeve details on oversized tees, hoodies and sweatshirts.'},
+  {slug:'caps',e:'🧢',g:'#cfd8e8,#9fb0cc',name:'Caps & Hats',svc:'T-shirts / Hoodies / Caps',desc:'Clean front logos and small monograms for teams, brands and events.'},
+  {slug:'sarees-blouses',e:'🥻',g:'#f2ddd5,#e0a99d',name:'Sarees & Blouses',svc:'Bridal / Blouse Work',desc:'Borders, pallus and detailed blouse work for weddings and festivals.'},
+  {slug:'kurtis-dupattas',e:'👗',g:'#e6d4ee,#c7a6d6',name:'Kurtis, Dupattas & Lehengas',svc:'Machine Embroidery',desc:'Fine floral, geometric and traditional motifs on ethnic wear.'},
+  {slug:'uniforms',e:'🎓',g:'#d4e0f0,#a8bddb',name:'Uniforms & Workwear',svc:'Logo / Bulk Order',desc:'School, company and event logos and names — bulk orders welcome.'},
+  {slug:'bags',e:'👜',g:'#e8dcc8,#cbb48d',name:'Bags & Pouches',svc:'Home Décor / Gifts',desc:'Tote bags, pouches and purses with personal or brand embroidery.'},
+  {slug:'gifts',e:'🎁',g:'#f6d6d6,#e5a0a0',name:'Name & Monogram Gifts',svc:'Home Décor / Gifts',desc:'Towels, handkerchiefs and return gifts with names and initials.'},
+  {slug:'home-decor',e:'🪟',g:'#d4e8d0,#a6cba0',name:'Curtains, Runners & Bedsheets',svc:'Home Décor / Gifts',desc:'Table runners, curtains, bed linen and other home décor pieces.'},
+  {slug:'jackets',e:'🧥',g:'#d6d6d6,#9c9c9c',name:'Jackets & Denim',svc:'T-shirts / Hoodies / Caps',desc:'Statement back pieces and pocket details on jackets and jeans.'},
+  {slug:'patches',e:'🏷️',g:'#f0e0b8,#d8bb6a',name:'Patches & Badges',svc:'Logo / Bulk Order',desc:'Embroidered patches and badges for teams, clubs and brands.'},
+  {slug:'torans',e:'🪔',g:'#fbd9a0,#f2a54a',name:'Torans & Wall Hangings',svc:'Home Décor / Gifts',desc:'Festive torans and decorative hangings for Diwali and other occasions.'},
+];
+$('#usesGrid').innerHTML=USES.map((u,i)=>`<article class="use-card reveal rd${(i%4)+1}"><div class="use-vis" data-slug="${u.slug}" data-img="${u.img||''}" style="background:linear-gradient(135deg,${u.g})"><span aria-hidden="true">${u.e}</span></div><div class="use-body"><h3 class="use-name">${u.name}</h3><p class="use-desc">${u.desc}</p><a class="use-btn" href="#order" data-svc="${u.svc}" data-item="${u.name}">Enquire</a></div></article>`).join('');
+$$('.use-vis').forEach(async box=>{
+  /* Add  img:'https://…'  to any USES item to use a specific photo URL (e.g. from Unsplash/Pexels); otherwise images/uses/<slug>.jpg|png|webp is used */
+  const cands=box.dataset.img?[box.dataset.img]:['jpg','png','webp'].map(x=>`images/uses/${box.dataset.slug}.${x}`);
+  for(const src of cands){
+    const im=await tryLoad(src);
+    if(im){const name=box.parentElement.querySelector('.use-name').textContent;im.alt=`Embroidered ${name} – GS Computer Embroidery`;im.loading='lazy';box.querySelector('span').remove();box.appendChild(im);break;}
+  }
+});
+
 /* ---------- Order form -> WhatsApp ---------- */
-$$('[data-svc]').forEach(a=>a.addEventListener('click',()=>{ $('#fSvc').value=a.dataset.svc==='Custom Design'?'Custom Design':a.dataset.svc; }));
+$$('[data-svc]').forEach(a=>a.addEventListener('click',()=>{
+  const sel=$('#fSvc'); if([...sel.options].some(o=>o.value===a.dataset.svc)) sel.value=a.dataset.svc;
+  if(a.dataset.item) $('#fMsg').value=`I'm interested in: ${a.dataset.item}. `;
+}));
 $('#orderForm').addEventListener('submit',e=>{
   e.preventDefault();
   const f=e.target, v=n=>f.elements[n].value.trim();
@@ -890,6 +993,8 @@ $$('.reveal').forEach(el=>io.observe(el));
 const I18N={
   en:{},
   te:{
+    nav_uses:'ఉత్పత్తులు',uses_label:'దుస్తులకే కాదు',uses_title:'అన్నింటిపై <em style="color:var(--thread)">ఎంబ్రాయిడరీ</em>',
+    uses_intro:'ఇంటి కుషన్ కవర్ల నుండి టీ-షర్టులు, క్యాప్‌లు, యూనిఫామ్‌ల వరకు — బట్ట అయితే మేము ఎంబ్రాయిడరీ చేస్తాము.',
     nav_services:'సేవలు',nav_works:'మా పనులు',nav_designs:'డిజైన్లు',nav_about:'మా కథ',nav_faq:'ప్రశ్నలు',nav_contact:'సంప్రదించండి',
     fest_title:'శుభ దీపావళి!',fest_text:'పండుగ ఎంబ్రాయిడరీ & టైలరింగ్ ఆర్డర్‌లను ముందే బుక్ చేసుకోండి.',fest_cta:'ఆర్డర్ చేయండి',
     hero_badge:'🪔 శుభ దీపావళి · గరివిడి, ఏపీ',
