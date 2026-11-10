@@ -614,7 +614,7 @@ footer{background:#0f0700;padding:56px 5vw 30px;border-top:1px solid rgba(201,16
     <p class="about-body reveal rd3">From delicate floral machine embroideries on kurtis to bold custom motifs on contemporary garments, every piece from our studio is stitched with love, precision, and a deep respect for textile artistry.</p>
     <div class="about-stats reveal rd4">
       <div><span class="stat-num" data-count="500" data-suffix="+">0</span><div class="stat-lbl">Designs</div></div>
-      <div><span class="stat-num" data-count="5" data-suffix="+">0</span><div class="stat-lbl">Years</div></div>
+      <div><span class="stat-num" data-count="3" data-suffix="+">0</span><div class="stat-lbl">Years</div></div>
       <div><span class="stat-num" data-count="300" data-suffix="+">0</span><div class="stat-lbl">Happy Clients</div></div>
     </div>
   </div>
@@ -810,6 +810,7 @@ const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
 const waLink = t => `https://wa.me/${CONFIG.phone}?text=${encodeURIComponent(t)}`;
 $('#yr').textContent = new Date().getFullYear();
+const tryLoad=src=>new Promise(r=>{const i=new Image();i.onload=()=>r(i);i.onerror=()=>r(null);i.src=src;});
 
 /* ---------- Festive mode ---------- */
 const festiveOn = CONFIG.festive.on && new Date() <= new Date(CONFIG.festive.hideAfter + 'T23:59:59');
@@ -909,7 +910,7 @@ const USES=[
 $('#usesGrid').innerHTML=USES.map((u,i)=>`<article class="use-card reveal rd${(i%4)+1}"><div class="use-vis" data-slug="${u.slug}" data-img="${u.img||''}" style="background:linear-gradient(135deg,${u.g})"><span aria-hidden="true">${u.e}</span></div><div class="use-body"><h3 class="use-name">${u.name}</h3><p class="use-desc">${u.desc}</p><a class="use-btn" href="#order" data-svc="${u.svc}" data-item="${u.name}">Enquire</a></div></article>`).join('');
 $$('.use-vis').forEach(async box=>{
   /* Add  img:'https://…'  to any USES item to use a specific photo URL (e.g. from Unsplash/Pexels); otherwise images/uses/<slug>.jpg|png|webp is used */
-  const cands=box.dataset.img?[box.dataset.img]:['jpg','png','webp'].map(x=>`images/uses/${box.dataset.slug}.${x}`);
+  const cands=box.dataset.img?[box.dataset.img]:['jpg','jpeg','png','webp','JPG','JPEG','PNG'].map(x=>`images/uses/${box.dataset.slug}.${x}`);
   for(const src of cands){
     const im=await tryLoad(src);
     if(im){const name=box.parentElement.querySelector('.use-name').textContent;im.alt=`Embroidered ${name} – GS Computer Embroidery`;im.loading='lazy';box.querySelector('span').remove();box.appendChild(im);break;}
@@ -936,7 +937,6 @@ $('#orderForm').addEventListener('submit',e=>{
 const grid=$('#worksGrid'), filtersEl=$('#filters');
 let works=[], shown=[], activeCat='All', lbIdx=0;
 const exts=['jpg','jpeg','png','webp'];
-const tryLoad=src=>new Promise(r=>{const i=new Image();i.onload=()=>r(i);i.onerror=()=>r(null);i.src=src;});
 const metaFor=(key,fname)=>CONFIG.workMeta[fname]||CONFIG.workMeta[key]||{};
 
 async function discoverWorks(){
